@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="keypad"
+            type="com.epam.rd.advphone.views.KeypadFragment" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/keypad_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="4dp"
+        tools:context=".views.KeypadFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/contactByNumberRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/phoneNumber"
+            android:layout_alignParentTop="true"
+            tools:itemCount="3"
+            tools:listitem="@layout/simple_contact_item_with_circle_image_view" />
+
+        <TextView
+            android:id="@+id/newContactBtn"
+            style="@style/TextAppearance.AppCompat.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/phoneNumber"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:text="@string/add_to_contact"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/phoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/buttonsContainer"
+            android:autofillHints=""
+            android:gravity="center"
+            android:hint="@string/number"
+            android:inputType="phone"
+            android:padding="18dp"
+            android:textSize="24sp"
+            tools:targetApi="O" />
+
+        <LinearLayout
+            android:id="@+id/buttonsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/firstNumberRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_number_one"
+                    style="@style/ButtonStyle"
+                    android:tag="1"
+                    android:text="@string/button_one" />
+
+                <Button
+                    android:id="@+id/button_number_two"
+                    style="@style/ButtonStyle"
+                    android:tag="2"
+                    android:text="@string/button_two"
+                    android:textColor="#3C3F41" />
+
+                <Button
+                    android:id="@+id/button_number_three"
+                    style="@style/ButtonStyle"
+                    android:tag="3"
+                    android:text="@string/button_three" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_number_four"
+                    style="@style/ButtonStyle"
+                    android:tag="4"
+                    android:text="@string/button_four" />
+
+                <Button
+                    android:id="@+id/button_number_five"
+                    style="@style/ButtonStyle"
+                    android:tag="5"
+                    android:text="@string/button_five" />
+
+                <Button
+                    android:id="@+id/button_number_six"
+                    style="@style/ButtonStyle"
+                    android:tag="6"
+                    android:text="@string/button_six" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_number_seven"
+                    style="@style/ButtonStyle"
+                    android:tag="7"
+                    android:text="@string/button_seven" />
+
+                <Button
+                    android:id="@+id/button_number_eight"
+                    style="@style/ButtonStyle"
+                    android:tag="8"
+                    android:text="@string/button_eight" />
+
+                <Button
+                    android:id="@+id/button_number_nine"
+                    style="@style/ButtonStyle"
+                    android:tag="9"
+                    android:text="@string/button_nine" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_asterisk"
+                    style="@style/ButtonStyle"
+                    android:tag="*"
+                    android:text="@string/button_asterisk" />
+
+                <Button
+                    android:id="@+id/button_number_zero"
+                    style="@style/ButtonStyle"
+                    android:tag="0"
+                    android:text="@string/button_zero" />
+
+                <Button
+                    android:id="@+id/button_sharp"
+                    style="@style/ButtonStyle"
+                    android:tag="#"
+                    android:text="@string/button_sharp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:baselineAligned="false">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/button2"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@null" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/button_call"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/circle_button"
+                        android:onClick="@{() -> keypad.call()}"
+                        app:srcCompat="@drawable/phone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/imageButton_backspace"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="@string/backspace"
+                        app:srcCompat="@drawable/backspace" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</layout>

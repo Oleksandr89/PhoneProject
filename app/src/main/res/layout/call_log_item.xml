@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="call"
+            type="com.epam.rd.advphone.models.Call" />
+        <variable
+            name="contact"
+            type="com.epam.rd.advphone.models.Contact" />
+        <variable
+            name="contactCommunicator"
+            type="com.epam.rd.advphone.util.ContactCommunicator" />
+        <variable
+            name="onCallInsertClickListener"
+            type="com.epam.rd.advphone.util.OnCallInsertClickListener" />
+        <variable
+            name="itemPosition"
+            type="int" />
+        <variable
+            name="view"
+            type="View" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/mainContactInfoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/callImage"
+            android:layout_width="@dimen/contactIconDimension"
+            android:layout_height="@dimen/contactIconDimension"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="8dp"
+            android:contentDescription="@string/call_image"
+            app:civ_circle_background_color="@color/circleImageBackground"/>
+
+        <TextView
+            android:id="@+id/callNumber"
+            style="@style/contactItemNameStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@+id/callImage"
+            android:layout_alignBottom="@+id/callImage"
+            android:layout_toStartOf="@+id/callType"
+            android:layout_toEndOf="@+id/callImage"
+            android:gravity="center_vertical"
+            android:text="@{call.name != null ? call.name : call.phone}"
+            android:textColor="#00DA1010"
+            tools:text="Contact name" />
+
+        <FrameLayout
+            android:id="@+id/callType"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@+id/callImage"
+            android:layout_alignBottom="@+id/callImage"
+            android:layout_toStartOf="@id/date"
+            android:layout_marginStart="8dp">
+
+            <ImageView
+                style="@style/callTypeStyle"
+                android:contentDescription="@string/call_type_outgoing"
+                android:visibility='@{call.type.equals("OUTGOING") ? View.VISIBLE : View.GONE}'
+                app:srcCompat="@drawable/call_made" />
+
+            <ImageView
+                style="@style/callTypeStyle"
+                android:contentDescription="@string/call_type_incoming"
+                android:visibility='@{call.type.equals("INCOMING") ? View.VISIBLE : View.GONE}'
+                app:srcCompat="@drawable/call_received" />
+
+            <ImageView
+                style="@style/callTypeStyle"
+                android:contentDescription="@string/call_type_missed"
+                android:visibility='@{call.type.equals("MISSED") ? View.VISIBLE : View.GONE}'
+                app:srcCompat="@drawable/call_missed" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@+id/callImage"
+            android:layout_alignBottom="@+id/callImage"
+            android:layout_alignParentEnd="true"
+            android:gravity="center_vertical"
+            android:layout_marginEnd="8dp"
+            android:text="@{call.date}" />
+
+        <RelativeLayout
+            android:id="@+id/callDetailInfoContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/callNumber"
+            android:layout_alignStart="@+id/callNumber"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/contactPhone"
+                style="@style/contactItemPhoneStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:text="@{call.name != null ? call.phone : null}"
+                tools:text="@string/number" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/contactPhone"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/callBtn"
+                    style="@style/contactDetailStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/call_image"
+                    android:onClick="@{() -> contactCommunicator.call(view, call.phone)}"
+                    android:src="@drawable/phone" />
+
+                <ImageButton
+                    android:id="@+id/sendSmsBtn"
+                    style="@style/contactDetailStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/sms_image"
+                    android:onClick="@{() -> contactCommunicator.showSmsActivity(view, call.phone, call.name)}"
+                    android:src="@drawable/message_text" />
+
+                <ImageButton
+                    android:id="@+id/addContactBtn"
+                    style="@style/contactDetailStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/edit_image"
+                    android:onClick="@{() -> onCallInsertClickListener.onInsertClick(call)}"
+                    android:src="@drawable/account_plus"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/duration"
+                    style="@style/contactDetailStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|end"
+                    android:text="@{call.duration != null ? call.duration : null}" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

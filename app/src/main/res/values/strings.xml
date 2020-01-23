@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name" translatable="false">Adv Phone</string>
+    <string name="keypad">keypad</string>
+    <string name="recent">recent</string>
+    <string name="contacts">contacts</string>
+    <string name="settings">Settings</string>
+    <string name="find_in_address_book">find in address book</string>
+    <string name="panel_layout">Panel layout:</string>
+    <string name="on_top">on top</string>
+    <string name="to_bottom">to bottom</string>
+    <string name="tag_location_top" translatable="false">PANEL_LOCATION_TOP</string>
+    <string name="tag_location_bottom" translatable="false">PANEL_LOCATION_BOTTOM</string>
+    <string name="number">Number</string>
+    <string name="button_one" translatable="false">1</string>
+    <string name="button_two" translatable="false">2</string>
+    <string name="button_three" translatable="false">3</string>
+    <string name="button_four" translatable="false">4</string>
+    <string name="button_five" translatable="false">5</string>
+    <string name="button_six" translatable="false">6</string>
+    <string name="button_seven" translatable="false">7</string>
+    <string name="button_eight" translatable="false">8</string>
+    <string name="button_nine" translatable="false">9</string>
+    <string name="button_asterisk" translatable="false">*</string>
+    <string name="button_zero" translatable="false">0</string>
+    <string name="button_sharp" translatable="false">#</string>
+    <string name="contact_image" translatable="false">contact image</string>
+    <string name="ok_btn" translatable="false">OK</string>
+    <string name="cancel_btn">Cancel</string>
+    <string name="call_image" translatable="false">call image</string>
+    <string name="sms_image" translatable="false">sms image</string>
+    <string name="heart_image" translatable="false">heart image</string>
+    <string name="edit_image" translatable="false">edit image</string>
+    <string name="call_1" translatable="false">sim 1</string>
+    <string name="call_2" translatable="false">sim 2</string>
+    <string name="backspace" translatable="false">backspase</string>
+    <string name="contact">Contact</string>
+    <string name="save">Save</string>
+    <string name="contact_name">Name</string>
+    <string name="contact_phone">Phone</string>
+    <string name="contact_email" translatable="false">Email</string>
+    <string name="empty_name">Enter name please</string>
+    <string name="empty_phone">Enter phone number please</string>
+    <string name="remove_contact">Remove contact</string>
+    <string name="messages">Messages</string>
+    <string name="new_message">New message</string>
+    <string name="send_sms">SEND</string>
+    <string name="sms_text">Text message</string>
+    <string name="arrow_up" translatable="false">arrow up</string>
+    <string name="number_divider" translatable="false">/</string>
+    <string name="pick_recipient">pick recipient</string>
+    <string name="zero" translatable="false">0</string>
+    <string name="message_sent">MESSAGE SENT</string>
+    <string name="empty_message">EMPTY MESSAGE</string>
+    <string name="no_recipient">%1$sPICK RECIPIENT(S)</string>
+    <string name="seconds">%d sec</string>
+    <string name="minutes">%d min</string>
+    <string name="pick_new_recipient_bnt_tag" translatable="false">pickNewRecipientBnt</string>
+    <string name="no_messages">No messages</string>
+    <string name="max_count_title">Max count</string>
+    <string name="max_count_text">You have exceeded the maximum number of recipients</string>
+    <string name="delete">Delete</string>
+    <string name="delete_sms_chain">The conversation chain will be deleted.</string>
+    <string name="delete_single_message">Delete message</string>
+    <string name="import_contacts_from">Import contacts from:</string>
+    <string name="all_contacts">All contacts</string>
+    <string name="phone_contacts">Phone contacts</string>
+    <string name="google_account_contacts">Google account contacts</string>
+    <string name="call_type_outgoing" translatable="false">outgoing</string>
+    <string name="call_type_incoming" translatable="false">incoming</string>
+    <string name="call_type_missed" translatable="false">missed</string>
+    <string name="add_to_contact">+ Add to contacts</string>
+</resources>

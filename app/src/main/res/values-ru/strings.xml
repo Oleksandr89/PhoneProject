@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="contacts">Контакты</string>
+    <string name="find_in_address_book">Поиск</string>
+    <string name="keypad">Набор</string>
+    <string name="number">Номер</string>
+    <string name="on_top">Сверху</string>
+    <string name="panel_layout">Расположение панели:</string>
+    <string name="settings">Настройки</string>
+    <string name="to_bottom">Снизу</string>
+    <string name="recent">Звонки</string>
+    <string name="contact">Контакт</string>
+    <string name="save">Сохранить</string>
+    <string name="contact_name">Имя</string>
+    <string name="contact_phone">Телефон</string>
+    <string name="empty_name">Пожалуйста введите имя</string>
+    <string name="empty_phone">Укажите телефон</string>
+    <string name="cancel_btn">Отмена</string>
+    <string name="remove_contact">Удалить контакт</string>
+    <string name="send_sms">Отправить</string>
+    <string name="sms_text">Текст сообщения</string>
+    <string name="pick_recipient">Выбрать получателя</string>
+    <string name="message_sent">ОТПРАВЛЕНО</string>
+    <string name="empty_message">Введите текст сообщения</string>
+    <string name="no_recipient">%1$sУКАЖИТЕ ПОЛУЧАТЕЛЯ</string>
+    <string name="new_message">Новое сообщение</string>
+    <string name="messages">Сообщения</string>
+    <string name="minutes">%d мин</string>
+    <string name="seconds">%d сек</string>
+    <string name="no_messages">Нет сообщений</string>
+    <string name="max_count_title">Максимальное количество</string>
+    <string name="max_count_text">"Превышено максимальное количество адресатов "</string>
+    <string name="delete">Удалить</string>
+    <string name="delete_sms_chain">Вся цепочка сообщений будет удалена</string>
+    <string name="delete_single_message">Удалить сообщение</string>
+    <string name="import_contacts_from">Импортировать контакты с:</string>
+    <string name="all_contacts">Все контакты</string>
+    <string name="google_account_contacts">Контакты Google аккаунта</string>
+    <string name="phone_contacts">Телефонные контакты</string>
+    <string name="add_to_contact">+ Добавить в контакты</string>
+</resources>

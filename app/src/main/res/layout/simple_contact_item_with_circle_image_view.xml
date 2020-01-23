@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/cardViewStyle">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/contactIcon"
+            android:layout_width="@dimen/contactIconDimension"
+            android:layout_height="@dimen/contactIconDimension"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="8dp"
+            android:contentDescription="@string/contact_image" />
+
+        <TextView
+            android:id="@+id/contactName"
+            style="@style/contactItemNameStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/contactIcon"
+            android:layout_alignBottom="@+id/contactIcon"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/contactIcon"
+            android:gravity="center_vertical"
+            tools:text="Contact name" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

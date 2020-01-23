@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/settingsTopicsStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/panel_layout" />
+
+        <RadioGroup
+            android:id="@+id/tab_panel_location_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/toolPanelOnTop"
+                style="@style/settingsRadioButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:tag="@string/tag_location_top"
+                android:text="@string/on_top" />
+
+            <RadioButton
+                android:id="@+id/toolPanelOnBottom"
+                style="@style/settingsRadioButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:tag="@string/tag_location_bottom"
+                android:text="@string/to_bottom" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/text_view_import_contacts_from"
+            style="@style/settingsTopicsStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/import_contacts_from" />
+
+        <CheckBox
+            android:id="@+id/all_contacts"
+            style="@style/settingsImportContactsStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/all_contacts" />
+
+        <CheckBox
+            android:id="@+id/phone_contacts"
+            style="@style/settingsImportContactsStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/phone_contacts" />
+
+        <CheckBox
+            android:id="@+id/google_account_contacts"
+            style="@style/settingsImportContactsStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/google_account_contacts" />
+    </LinearLayout>
+</layout>

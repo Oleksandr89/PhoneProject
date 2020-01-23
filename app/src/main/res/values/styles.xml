@@ -1,0 +1,93 @@
+<resources
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppThemeNoActionBarStyle" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="settingsTopicsStyle">
+        <item name="android:background">@color/backgroundGrey</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textSize">@dimen/settingsTopic</item>
+    </style>
+
+    <style name="settingsRadioButtonStyle">
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:textSize">@dimen/settingsRadioText</item>
+    </style>
+
+    <style name="settingsImportContactsStyle">
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:textSize">@dimen/settingsImportContacts</item>
+    </style>
+
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="contactItemNameStyle">
+        <item name="android:textSize">@dimen/contactName</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <style name="contactItemPhoneStyle">
+        <item name="android:textSize">@dimen/contactNumber</item>
+        <item name="android:layout_marginStart">0dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <style name="contactDetailStyle">
+        <item name="android:backgroundTint">@android:color/transparent</item>
+        <item name="android:layout_marginEnd">16dp</item>
+    </style>
+
+    <style name="contactActivityStyle" parent="@style/TextAppearance.AppCompat.Large">
+        <item name="android:lines">1</item>
+        <item name="android:maxLength">20</item>
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
+
+    <style name="callTypeStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_alignTop">@+id/callImage</item>
+        <item name="android:layout_alignBottom">@+id/callImage</item>
+        <item name="android:layout_toEndOf">@+id/callNumber</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginEnd">8dp</item>
+    </style>
+
+    <style name="smsItemStyle">
+        <item name="android:ellipsize">end</item>
+        <item name="android:lines">1</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="cardViewStyle">
+        <item name="android:layout_margin">1dp</item>
+        <item name="android:backgroundTint">@color/cardViewBackground</item>
+        <item name="cardCornerRadius">10dp</item>
+        <item name="cardElevation">2dp</item>
+    </style>
+
+    <style name="toolBarStyle">
+        <item name="android:elevation">2dp</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+</resources>

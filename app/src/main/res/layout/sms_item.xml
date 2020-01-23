@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/cardViewStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/contactIcon"
+            android:layout_width="@dimen/contactIconDimension"
+            android:layout_height="@dimen/contactIconDimension"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="false"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            style="@style/TextAppearance.AppCompat.Large" />
+
+        <LinearLayout
+            android:id="@+id/senderRecipientContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_toStartOf="@+id/smsTime"
+            android:layout_toEndOf="@+id/contactIcon"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/smsRecipientName"
+                style="@style/smsItemStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                tools:text="Recipient" />
+
+            <TextView
+                android:id="@+id/smsShortText"
+                style="@style/smsItemStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Message text" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/smsTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/senderRecipientContainer"
+            android:layout_alignBottom="@id/senderRecipientContainer"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            tools:text="Date" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

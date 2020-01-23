@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="contact"
+            type="com.epam.rd.advphone.models.Contact" />
+
+        <variable
+            name="onContactEditClickListener"
+            type="com.epam.rd.advphone.util.OnContactEditClickListener" />
+
+        <variable
+            name="contactCommunicator"
+            type="com.epam.rd.advphone.util.ContactCommunicator" />
+
+        <variable
+            name="itemPosition"
+            type="int" />
+
+        <variable
+            name="view"
+            type="android.view.View" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/cardViewStyle">
+
+        <RelativeLayout
+            android:id="@+id/mainContactInfoContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/contactImage"
+                android:layout_width="@dimen/contactIconDimension"
+                android:layout_height="@dimen/contactIconDimension"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="8dp"
+                android:contentDescription="@string/contact_image" />
+
+            <TextView
+                android:id="@+id/contactName"
+                style="@style/contactItemNameStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/contactImage"
+                android:layout_alignBottom="@+id/contactImage"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@+id/contactImage"
+                android:gravity="center_vertical"
+                android:text="@{contact.name}"
+                tools:text="Contact name" />
+
+            <RelativeLayout
+                android:id="@+id/contactDetailInfoContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/contactName"
+                android:layout_alignStart="@+id/contactName"
+                android:layout_alignParentEnd="true"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/contactPhone"
+                    style="@style/contactItemPhoneStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:text="@{contact.phone}"
+                    tools:text="@string/number" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/contactPhone"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/callBtn"
+                        style="@style/contactDetailStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/call_image"
+                        android:onClick="@{() -> contactCommunicator.call(view, contact.phone)}"
+                        android:src="@drawable/phone" />
+
+                    <ImageButton
+                        android:id="@+id/sendSmsBtn"
+                        style="@style/contactDetailStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/sms_image"
+                        android:onClick="@{() -> contactCommunicator.showSmsActivity(view, contact.phone, contact.name)}"
+                        android:src="@drawable/message_text" />
+
+                    <ImageButton
+                        android:id="@+id/setFavouriteBtn"
+                        style="@style/contactDetailStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/heart_image"
+                        android:onClick="@{() -> onContactEditClickListener.onFavouriteClick(itemPosition, contact)}"
+                        android:src="@{contact.favourite ? @drawable/heart : @drawable/heart_outline}"
+                        tools:src="@drawable/heart_outline" />
+
+                    <ImageButton
+                        android:id="@+id/editContactBtn"
+                        style="@style/contactDetailStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/edit_image"
+                        android:onClick="@{() -> onContactEditClickListener.onEditClick(contact)}"
+                        android:src="@drawable/account_edit_outline" />
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

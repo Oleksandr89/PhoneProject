@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/recipientIcon"
+        android:layout_width="@dimen/contactIconDimension"
+        android:layout_height="@dimen/contactIconDimension"
+        android:layout_marginEnd="4dp"
+        android:gravity="center"
+        style="@style/TextAppearance.AppCompat.Large"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/single_sms_from_recipient_background"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/smsTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="12:20" />
+
+        <TextView
+            android:id="@+id/smsText"
+            style="@style/TextAppearance.AppCompat.Large"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="some very important text" />
+    </LinearLayout>
+</LinearLayout>
